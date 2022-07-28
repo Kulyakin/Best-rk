@@ -4,8 +4,8 @@
   <a class="look-all">Смотреть все</a>
 </div>
 
-<swiper>
-    <swiper-slide class="slide"><Card/></swiper-slide>
+<swiper :space-between="-100" :slides-per-view="auto">
+    <swiper-slide class="slide" ><Card/></swiper-slide>
     <swiper-slide class="slide"><Card/></swiper-slide>
     <swiper-slide class="slide"><Card/></swiper-slide>
   </swiper>
@@ -32,10 +32,7 @@ import Card from './Card.vue';
   }
 </script>
 <style scoped>
-.swiper-slide {
-  max-width: 317px;
-  max-height: 309px;
-}
+
 .swiper-wrapper {
   max-height: 309px;
 }
