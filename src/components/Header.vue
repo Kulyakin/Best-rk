@@ -29,6 +29,7 @@ export default {
         width: 365px;
         height: 50px;
         border-radius: 56px;
+        font-size: 18px;
         background-color: #D9D9D9;
         box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
         margin: 15px 25px 8px 25px;
@@ -86,12 +87,12 @@ export default {
     opacity: 0.7;
 }
 .btn:active {
-    transform: translateY(1px);
+    transform: translateY(2px);
     background-color: rgba(75, 75, 75, 0.25);
 
 }
 .btn-all:active {
-    transform: translateY(1px);
+    transform: translateY(2px);
     background-color: rgba(75, 75, 75, 0.25);
 
 
