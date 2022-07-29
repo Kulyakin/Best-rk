@@ -3,6 +3,9 @@
         <Carousel/>
         <Carousel/>
         <Carousel/>
+        <Carousel/>
+        <Carousel/>
+        <Carousel/>
     </div>
 </template>
 <script>

@@ -1,5 +1,5 @@
 <template >
-    <header class="header">
+    <header class="header" ref="headRef">
         <input class="input" placeholder="Поиск по всем категориям"/>
         <div class="btn-block">
             <button class="btn">
@@ -15,7 +15,31 @@
 </template>
 <script>
 export default {
-    
+     methods: {
+      vueOnScroll() {
+        var prev = window.pageYOffset;
+        const refs = this.$refs.headRef; // assign the reference in variable
+        window.addEventListener("scroll", () => {
+          var curr = window.pageYOffset;
+          if (prev > curr) {
+            refs.classList.add("scrolled");
+            refs.classList.remove("scrollDown");
+          } else {
+            refs.classList.add("scrollDown");
+            refs.classList.remove("scrolled");
+          }
+          if (curr === 0) {
+            refs.classList.remove("scrollDown");
+            refs.classList.remove("scrolled");
+          }
+            prev = curr;
+        });
+      },
+    },
+    mounted() {
+      // run the function when the component's mount
+      this.vueOnScroll();
+    }
 }
 </script>
 <style scoped>
@@ -23,6 +47,41 @@ export default {
         width: 414px;
         height: 127px;
         background-color: #EDEDED;
+    }
+
+    .scrolled {
+        position: sticky;
+        top: 0px;
+        z-index: 3;
+        animation: 0.3s show ease-in-out;
+    }
+
+    .scrollDown {
+        position: sticky;
+        top: -127px;
+        z-index: 3;
+        animation: 0.3s hide ease-in-out;
+
+    }
+
+    @keyframes show {
+    from {
+        top: -127px;
+    }
+    to {
+        top: 0px;
+    
+        }
+    }
+
+    @keyframes hide {
+    from {
+        top: 0px;
+    }
+    to {
+        top: -127px;
+    
+        }
     }
 
     .input {
@@ -46,6 +105,7 @@ export default {
         width: 160px;
         height: 45px;
         margin-left: 25px;
+        padding-left: 6px;
         outline: none;
         border: none;
         background-color: #D9D9D9;
@@ -54,6 +114,7 @@ export default {
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 46px;
         display: flex;
+        cursor: pointer;
         align-items: center;
         transition: all 0.1s ease-in-out;
     }
@@ -61,6 +122,7 @@ export default {
         width: 174px;
         height: 45px;
         margin-left: 31px;
+        padding-left: 6px;
         outline: none;
         border: none;
         background-color: #fff;
@@ -70,6 +132,7 @@ export default {
         border-radius: 46px;
         display: flex;
         align-items: center;
+        cursor: pointer;
         transition: all 0.1s ease-in-out;
 
     }

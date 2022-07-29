@@ -18,6 +18,7 @@ export default {
     background-color: white;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
     border-radius: 36px;
 }
 

@@ -4,7 +4,15 @@
   <a class="look-all">Смотреть все</a>
 </div>
 
-<swiper :space-between="-100" :slides-per-view="auto">
+<swiper
+
+:space-between="-70" 
+:slides-per-view="auto" 
+:slidesOffsetBefore="25"
+:slidesOffsetAfter="-80"
+:slideToClickedSlide="true"
+
+>
     <swiper-slide class="slide" ><Card/></swiper-slide>
     <swiper-slide class="slide"><Card/></swiper-slide>
     <swiper-slide class="slide"><Card/></swiper-slide>
@@ -33,26 +41,27 @@ import Card from './Card.vue';
 </script>
 <style scoped>
 
-.swiper-wrapper {
-  max-height: 309px;
-}
+
 
 .carousel-header {
   display: flex;
   justify-content: space-between;
   padding-left: 25px;
   padding-bottom: 18px;
+  padding-top: 19px;
+  padding-right: 24px ;
 }
 .look-all {
   color: #FFFFFF;
   font-size: 16px;
+  cursor: pointer;
 }
 .new {
+  cursor: pointer;
   font-size: 16px;
 }
 .slide {
-  margin-left: 25px;
-  margin-bottom: 31px;
+  margin-bottom: 10px;
 }
 .card {
     width: 309px;
